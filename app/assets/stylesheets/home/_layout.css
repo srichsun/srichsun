@@ -1,0 +1,126 @@
+/*--------------------header--------------------*/
+
+.site-header {
+    width: 100%;
+    position: relative;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+}
+
+
+.site-logo {
+    text-transform: uppercase;
+    font-weight: 800;
+    float: left;
+}
+
+.site-logo,
+.site-header-toggle,
+.site-menu .nav-link {
+    padding: 20px 10px;
+}
+
+@media (max-width: 992px) {
+    .site-menu {
+        white-space: nowrap;
+        width: 100%;
+        overflow: auto;
+    }
+}
+
+/*---------------------main---------------------*/
+
+.content {
+    margin: 50px 0;
+    /*    background-color: #f1f1f1;*/
+}
+
+.site-main {
+    position: relative;
+    z-index: 1;
+}
+
+.site-main-inner::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+
+/*-------------------container------------------*/
+
+.container-fluid,
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/*avoid cant see if elements inside all float*/
+
+.container-fluid::after,
+.container::after {
+    content: '';
+    display: block;
+    clear: both;
+}
+
+@media ( min-width: 768px) {
+    .container {
+        width: 720px;
+    }
+}
+
+@media (min-width: 992px) {
+    .container {
+        width: 920px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .container {
+        width: 1100px;
+    }
+}
+
+/*---------------contain & sidebar--------------*/
+
+@media ( min-width: 768px) {
+
+    .content {
+        width: 68%;
+        float: left;
+    }
+
+    .sidebar {
+        width: 32%;
+        float: left;
+    }
+
+    .sidebar + .content {
+        width: 36%;
+    }
+
+    .sidebar ~ .sidebar {
+        float: right;
+    }
+
+    .content:last-child {
+        width: 68%;
+    }
+
+    .content:only-child {
+        width: 100%;
+    }
+
+}
+
+/*--------------------footer--------------------*/
+
+.site-footer {
+    position: relative;
+    z-index: 1;
+}
