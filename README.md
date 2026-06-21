@@ -19,6 +19,17 @@ Row-level multi-tenancy, pessimistic locking to prevent overselling, an AASM ord
 A caching gateway that absorbs a **1,000:1 supply-demand gap** — serving 1M+ daily requests against an upstream model capped at 1,000 calls/day — without sacrificing data freshness or breaking the upstream contract. A study in high-concurrency architecture and engineering quality.
 🔗 [Live overview](https://srichsun.github.io/inference-cache-gateway/)
 
+### [rails-health-audit](https://github.com/srichsun/rails-health-audit) — Severity-Ranked Rails Codebase Audit
+A repeatable health audit for legacy Rails codebases. It orchestrates the canonical tools (Brakeman, bundler-audit, RubyCritic, RuboCop, license_finder, …) and adds the judgment layer on top: **ranks findings by business impact**, runs runtime data-correctness checks (`active_record_doctor`, `lol_dba`) that static bundles skip, and turns the raw output into a prioritized action plan. Packaged as a Claude Code skill, with zero footprint on the target project.
+
+---
+
+## ✍️ Writing
+
+I write up engineering practice on [**dev.to/danewu**](https://dev.to/danewu):
+
+- [Diagnosing a slow Rails page, layer by layer](https://dev.to/danewu/diagnosing-a-slow-rails-page-layer-by-layer-3abo) — locating slowness by request layer: N+1 vs. a single slow query, and how dev tooling and a production APM fit together.
+
 ---
 
 ## 🛠️ Tech Stack
