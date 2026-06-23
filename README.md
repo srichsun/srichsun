@@ -1,6 +1,6 @@
 # Hi, I'm Dane 👋
 
-Senior **Ruby on Rails** backend engineer based in Taiwan, with 8+ years building and scaling web applications for small-to-mid-sized teams. I focus on **system architecture, database optimization, and high-concurrency design**, and I care about clean, well-tested, observable code.
+Senior **Ruby on Rails** backend engineer based in Taiwan, with 6+ years building and scaling web applications for small-to-mid-sized teams. I focus on **system architecture, database optimization, and high-concurrency design**, and I care about clean, well-tested, observable code.
 
 - 🔭 Deep in Rails 7/8, high-throughput systems, and AI-assisted development workflows
 - ⚡ Strong on caching, distributed locking, and API design under load
