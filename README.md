@@ -4,6 +4,7 @@ Senior **Ruby on Rails** backend engineer based in Taiwan, with 6+ years buildin
 
 - 🔭 Deep in Rails 7/8, high-throughput systems, and AI-assisted development workflows
 - ⚡ Strong on caching, distributed locking, and API design under load
+- ✍️ Writing a deep-dive series on Rails performance — *Lessons from Production*
 - 🤖 Daily driver of Claude Code for faster, higher-quality delivery
 - 🌏 Open to international remote roles
 
@@ -26,8 +27,18 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 
 ## ✍️ Writing
 
-I write up engineering practice on [**dev.to/danewu**](https://dev.to/danewu):
+I write the series **Rails Performance: Lessons from Production** — taking real performance incidents apart layer by layer, from the actual SQL up through caching and HTTP, using one running example throughout. On [**dev.to/danewu**](https://dev.to/danewu) and [**Medium**](https://medium.com/@danewu_).
 
+**Database layer**
+- [From 8s to 1s: Truly Understanding Rails N+1 by Opening Up ActiveRecord](https://dev.to/danewu/from-8s-to-1s-truly-understanding-rails-n1-by-opening-up-activerecord-1oj) — a four-layer mental model of ActiveRecord (Ruby → SQL → DB → memory) that explains N+1, broken preloads, and row explosion.
+- [A 1000x Speedup From One Index — and Why It Sometimes Does Nothing](https://dev.to/danewu/a-1000x-speedup-from-one-index-and-why-it-sometimes-does-nothing-6if) — how indexes actually work (B-tree, leftmost prefix) and the real reasons one you added still won't kick in.
+- [You Wanted a Number, but Loaded 500,000 Rows Into Memory](https://dev.to/danewu/you-wanted-a-number-but-loaded-500000-rows-into-memory-5087) — `count` vs `size`, `exists?` vs `present?`, SQL aggregation, and `find_each`: let the database do the work.
+
+**Caching**
+- [The Fastest Query Is the One You Never Run: The Four Layers of Rails Caching](https://dev.to/danewu/the-fastest-query-is-the-one-you-never-run-the-four-layers-of-rails-caching-fif) — compute, invalidate, render, transfer — and the one idea that ties them together.
+- [We Added a Cache; Three Days Later It Took the Database Down at Peak](https://dev.to/danewu/we-added-a-cache-three-days-later-it-took-the-database-down-at-peak-p46) — four production caching traps: stampede, treating cache as source of truth, unbounded keys, and caching failures.
+
+**Diagnosis**
 - [Diagnosing a slow Rails page, layer by layer](https://dev.to/danewu/diagnosing-a-slow-rails-page-layer-by-layer-3abo) — locating slowness by request layer: N+1 vs. a single slow query, and how dev tooling and a production APM fit together.
 
 ---
@@ -47,5 +58,3 @@ I write up engineering practice on [**dev.to/danewu**](https://dev.to/danewu):
 ## 📫 Reach Me
 
 [LinkedIn](https://www.linkedin.com/in/danewuglobal/) · srichsun@gmail.com
-
-<!-- Replace the # links and email above before publishing -->
