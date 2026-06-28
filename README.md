@@ -27,7 +27,9 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 
 ## ✍️ Writing
 
-I write the series **Rails Performance: Lessons from Production** — taking real performance incidents apart layer by layer, from the actual SQL up through caching and infrastructure, using one running example throughout. On [**dev.to/danewu**](https://dev.to/danewu) and [**Medium**](https://medium.com/@danewu_).
+**Rails Performance: Lessons from Production** — a deep-dive series that diagnoses real performance incidents one layer at a time (SQL → caching → background work → infrastructure), all on a single running example.
+
+📍 Read it on [**dev.to/danewu**](https://dev.to/danewu) and [**Medium**](https://medium.com/@danewu_).
 
 **Start here**
 - [Diagnosing a slow Rails page, layer by layer](https://dev.to/danewu/diagnosing-a-slow-rails-page-layer-by-layer-3abo) — locating slowness by request layer: N+1 vs. a single slow query, and how dev tooling and a production APM fit together.
