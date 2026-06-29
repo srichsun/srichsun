@@ -50,6 +50,9 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 **Infrastructure**
 - [The Code Is Fine, but Requests Queue Until They Time Out: Puma, Pools, CDN](https://dev.to/danewu/the-code-is-fine-but-requests-queue-until-they-time-out-puma-pools-cdn-15lj) — Puma workers × threads, aligning the connection pool, the GVL and IO, and offloading static assets to a CDN.
 
+**Data modeling**
+- [You've Tuned the Queries and It's Still Slow — Now Change the Data Model](https://dev.to/danewu/youve-tuned-the-queries-and-its-still-slow-now-change-the-data-model-41ah) — denormalization (counter_cache, redundant hot values, materialized views), its consistency cost, and where data-model changes sit in the optimization order.
+
 
 ## 🛠️ Tech Stack
 
