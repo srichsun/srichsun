@@ -38,6 +38,7 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 - [From 8s to 1s: Truly Understanding Rails N+1 by Opening Up ActiveRecord](https://dev.to/danewu/from-8s-to-1s-truly-understanding-rails-n1-by-opening-up-activerecord-1oj) — a four-layer mental model of ActiveRecord (Ruby → SQL → DB → memory) that explains N+1, broken preloads, and row explosion.
 - [A 1000x Speedup From One Index — and Why It Sometimes Does Nothing](https://dev.to/danewu/a-1000x-speedup-from-one-index-and-why-it-sometimes-does-nothing-6if) — how indexes actually work (B-tree, leftmost prefix) and the real reasons one you added still won't kick in.
 - [You Wanted a Number, but Loaded 500,000 Rows Into Memory](https://dev.to/danewu/you-wanted-a-number-but-loaded-500000-rows-into-memory-5087) — count vs size, exists? vs present?, SQL aggregation, and find_each: let the database do the work.
+- [You've Tuned the Queries and It's Still Slow — Now Change the Data Model](https://dev.to/danewu/youve-tuned-the-queries-and-its-still-slow-now-change-the-data-model-41ah) — denormalization (counter_cache, redundant hot values, materialized views), its consistency cost, and where data-model changes sit in the optimization order.
 
 **Caching**
 - [The Fastest Query Is the One You Never Run: The Four Layers of Rails Caching](https://dev.to/danewu/the-fastest-query-is-the-one-you-never-run-the-four-layers-of-rails-caching-fif) — compute, invalidate, render, transfer — and the one idea that ties them together.
@@ -49,10 +50,6 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 
 **Infrastructure**
 - [The Code Is Fine, but Requests Queue Until They Time Out: Puma, Pools, CDN](https://dev.to/danewu/the-code-is-fine-but-requests-queue-until-they-time-out-puma-pools-cdn-15lj) — Puma workers × threads, aligning the connection pool, the GVL and IO, and offloading static assets to a CDN.
-
-**Data modeling**
-- [You've Tuned the Queries and It's Still Slow — Now Change the Data Model](https://dev.to/danewu/youve-tuned-the-queries-and-its-still-slow-now-change-the-data-model-41ah) — denormalization (counter_cache, redundant hot values, materialized views), its consistency cost, and where data-model changes sit in the optimization order.
-
 
 ## 🛠️ Tech Stack
 
