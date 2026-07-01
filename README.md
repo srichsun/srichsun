@@ -5,16 +5,16 @@ Senior **Ruby on Rails** backend engineer based in Taiwan, with 6+ years buildin
 - 🔭 Deep in Rails 7/8, high-throughput systems, and AI-assisted development workflows
 - ⚡ Strong on caching, distributed locking, and API design under load
 - ✍️ Writing a deep-dive series on Rails performance — *Lessons from Production*
-- 🤖 Daily driver of Claude Code for faster, higher-quality delivery
+- 🤖 Building production AI features — LLM tool-use agents on the Anthropic Claude API — and a daily driver of Claude Code
 - 🌏 Open to international remote roles
 
 ---
 
 ## 🚀 Featured Projects
 
-### [MerchantOS](https://github.com/srichsun/merchant_os) — Multi-tenant E-commerce SaaS (Shopify-style)
-Row-level multi-tenancy, pessimistic locking to prevent overselling, an AASM order state machine, Stripe & ECPay webhook signature verification, `pg_search` trigram full-text search, Hotwire frontend, and Sentry + Lograge observability.
-🔗 [Live overview](https://srichsun.github.io/merchant_os/)
+### [flashdrop](https://github.com/srichsun/flashdrop) — Influencer Flash-Sale Marketplace + AI Customer-Service Agent
+Creators run limited-time, limited-quantity drops; buyers get a countdown, live stock and one-tap checkout — and an **AI assistant (Anthropic Claude) answers product questions** in the storefront chat, so the creator doesn't have to write copy or sit in a DM inbox. The agent is a **hand-built LLM tool-use loop** with **tenant-scoped, read-only tools** (order status, stock, returns), product-aware context, and replies streamed back over Action Cable from a background job — read-only by design, with cross-store isolation proven by specs. Underneath: row-level multi-tenancy, pessimistic-lock oversell protection, an AASM order state machine, and signature-verified Stripe & ECPay webhooks.
+🔗 [Live overview](https://srichsun.github.io/flashdrop/)
 
 ### [Inference Cache Gateway](https://github.com/srichsun/inference-cache-gateway) — High-Concurrency AI Inference Cache
 A caching gateway that absorbs a **1,000:1 supply-demand gap** — serving 1M+ daily requests against an upstream model capped at 1,000 calls/day — without sacrificing data freshness or breaking the upstream contract. A study in high-concurrency architecture and engineering quality.
@@ -52,6 +52,8 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 - [The Code Is Fine, but Requests Queue Until They Time Out: Puma, Pools, CDN](https://dev.to/danewu/the-code-is-fine-but-requests-queue-until-they-time-out-puma-pools-cdn-15lj) — Puma workers × threads, aligning the connection pool, the GVL and IO, and offloading static assets to a CDN.
 
 ## 🛠️ Tech Stack
+
+**AI / Agents** · Anthropic Claude API · AI agents (LLM tool-use loop) · function calling / tool use · tenant-scoped read-only tools · context-aware prompting · async agent + Action Cable streaming · Claude Code
 
 **Backend** · Ruby on Rails 7/8 · RSpec (TDD) · Sidekiq · RESTful API · JWT · Hotwire · Devise · Pundit · ActionCable · acts_as_tenant · AASM
 
