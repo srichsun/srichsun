@@ -1,23 +1,27 @@
 # Hi, I'm Dane 👋
 
-Senior **Ruby on Rails** backend engineer based in Taiwan, with 6+ years building and scaling web applications for small-to-mid-sized teams. I focus on **system architecture, database optimization, and high-concurrency design**, and I care about clean, well-tested, observable code.
+**AI application engineer** with 6+ years of backend SaaS experience, now building production LLM applications. I pair a strong systems foundation — high-concurrency caching, distributed locking, multi-tenant architecture — with hands-on LLM engineering: **agents, RAG, and tool-use** with Python/FastAPI and the Claude/OpenAI APIs.
 
-- 🔭 Deep in Rails 7/8, high-throughput systems, and AI-assisted development workflows
-- ⚡ Strong on caching, distributed locking, and API design under load
+- 🤖 Building LLM agents (LangGraph tool-use + memory), RAG, and voice AI with Python/FastAPI
+- ⚡ Strong backend foundation: caching, distributed locking, and API design under load (Rails 7/8)
 - ✍️ Writing a deep-dive series on Rails performance — *Lessons from Production*
-- 🤖 Building production AI features — LLM tool-use agents on the Anthropic Claude API — and a daily driver of Claude Code
-- 🌏 Open to international remote roles
+- 🧰 Daily driver of Claude Code / AI-assisted development
+- 🌏 Open to AI Engineer / backend roles, incl. international remote
 
 ---
 
 ## 🚀 Featured Projects
 
-### [flashdrop](https://github.com/srichsun/flashdrop) — Influencer Flash-Sale Marketplace + AI Customer-Service Agent
-Creators run limited-time, limited-quantity drops; buyers get a countdown, live stock and one-tap checkout — and an **AI assistant (Anthropic Claude) answers product questions** in the storefront chat, so the creator doesn't have to write copy or sit in a DM inbox. The agent is a **hand-built LLM tool-use loop** with **tenant-scoped, read-only tools** (order status, stock, returns), product-aware context, and replies streamed back over Action Cable from a background job — read-only by design, with cross-store isolation proven by specs. Underneath: row-level multi-tenancy, pessimistic-lock oversell protection, an AASM order state machine, and signature-verified Stripe & ECPay webhooks.
+### [Performance Coach](https://github.com/srichsun/performance-coach) — Voice AI Coach with Long-Term Memory
+An AI coach you talk to every day (voice or text) that gets to know you over time. Built as a **tool-using LLM agent** on **LangGraph** with a **three-layer memory architecture** — structured Postgres logs + **pgvector semantic recall (RAG)** + an LLM-condensed long-term profile — so the journal can grow indefinitely while the prompt stays bounded. Python/FastAPI backend, Claude/OpenAI, Whisper + ElevenLabs voice, token-by-token streaming, Firebase auth, deployed on **GCP Cloud Run + Cloud SQL**.
+🔗 [Live app](https://daily-coach-iwkg6nbera-de.a.run.app/) · [Overview](https://srichsun.github.io/performance-coach/)
+
+### [flashdrop](https://github.com/srichsun/flashdrop) — Influencer Flash-Sale E-Commerce (Rails)
+Creators run limited-time, limited-quantity drops; buyers get a countdown, live stock, and one-tap checkout. Underneath: **row-level multi-tenancy** (`acts_as_tenant`) with two independent tenant-resolution paths, **pessimistic-lock oversell protection** proven by multi-threaded race tests, an **AASM order state machine** with full rollback on payment failure, and **signature-verified Stripe & ECPay webhooks**. Full-text search via `pg_search` trigram, CI (RuboCop / RSpec / Brakeman / gitleaks), and observability with Scout APM + Sentry + Lograge.
 🔗 [Live overview](https://srichsun.github.io/flashdrop/)
 
-### [Inference Cache Gateway](https://github.com/srichsun/inference-cache-gateway) — High-Concurrency AI Inference Cache
-A caching gateway that absorbs a **1,000:1 supply-demand gap** — serving 1M+ daily requests against an upstream model capped at 1,000 calls/day — without sacrificing data freshness or breaking the upstream contract. A study in high-concurrency architecture and engineering quality.
+### [Inference Cache Gateway](https://github.com/srichsun/inference-cache-gateway) — High-Concurrency Inference Cache
+A caching gateway that absorbs a **1,000:1 supply-demand gap** — serving 1M+ daily requests against an upstream capped at 1,000 calls/day — without sacrificing data freshness or breaking the upstream contract. A study in high-concurrency architecture and engineering quality (single-flight Redis locks, atomic quota guards, an anti-corruption layer, 100% test coverage).
 🔗 [Live overview](https://srichsun.github.io/inference-cache-gateway/)
 
 ### [rails-health-audit](https://github.com/srichsun/rails-health-audit) — Severity-Ranked Rails Codebase Audit
@@ -53,13 +57,13 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 
 ## 🛠️ Tech Stack
 
-**AI / Agents** · Anthropic Claude API · AI agents (LLM tool-use loop) · function calling / tool use · tenant-scoped read-only tools · context-aware prompting · async agent + Action Cable streaming · Claude Code
+**AI / LLM** · Python · FastAPI · LangChain · LangGraph (agent orchestration) · RAG · pgvector (vector search) · Claude & OpenAI APIs · LangSmith · Pytest · uv · Claude Code
 
 **Backend** · Ruby on Rails 7/8 · RSpec (TDD) · Sidekiq · RESTful API · JWT · Hotwire · Devise · Pundit · ActionCable · acts_as_tenant · AASM
 
-**Data** · PostgreSQL · MySQL · Redis · Memcached · query tuning & index design · N+1 detection (Bullet) · row-level tenancy
+**Data** · PostgreSQL · pgvector · MySQL · Redis · Memcached · query tuning & index design · N+1 detection (Bullet) · row-level tenancy
 
-**Infra & DevOps** · AWS (EC2, RDS, S3, SES) · Docker · GitHub Actions CI/CD · Capistrano · Puma · Nginx · Brakeman · bundler-audit · strong_migrations
+**Infra & DevOps** · AWS (EC2, RDS, S3, SES) · GCP (Cloud Run, Cloud SQL) · Docker · GitHub Actions CI/CD · Capistrano · Puma · Nginx · Brakeman · bundler-audit · strong_migrations
 
 **Architecture** · System design · distributed locks (Redis SETNX) · cache architecture (Russian Doll / fragment) · rate limiting · observability (Sentry) · payment integration (Stripe / ECPay)
 
