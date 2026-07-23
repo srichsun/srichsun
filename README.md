@@ -1,8 +1,8 @@
 # Hi, I'm Dane 👋
 
-**AI application engineer** with 6+ years of backend SaaS experience, now building production LLM applications. I pair a strong systems foundation — high-concurrency caching, distributed locking, multi-tenant architecture — with hands-on LLM engineering: **agents, RAG, and tool-use** with Python/FastAPI and the Claude/OpenAI APIs.
+**Senior backend engineer** with 6+ years of backend SaaS experience (OTT, healthcare, logistics, fintech), specialized in high-concurrency caching, distributed locking, multi-tenant architecture, and RESTful API design. I also build **AI applications** — LLM agents with RAG, tool-use, and long-term memory using Python/FastAPI and the Claude/OpenAI APIs — and bring AI-assisted development across design, implementation, testing, and documentation.
 
-- 🤖 Building LLM agents (LangGraph tool-use + memory), RAG, and voice AI with Python/FastAPI
+- 🤖 Building LLM agents (tool-use + long-term memory), RAG, and structured memory with Python/FastAPI
 - ⚡ Strong backend foundation: caching, distributed locking, and API design under load (Rails 7/8)
 - ✍️ Writing a deep-dive series on Rails performance — *Lessons from Production*
 - 🧰 Daily driver of Claude Code / AI-assisted development
@@ -12,9 +12,9 @@
 
 ## 🚀 Featured Projects
 
-### [Performance Coach](https://github.com/srichsun/performance-coach) — Voice AI Coach with Long-Term Memory
-An AI coach you talk to every day (voice or text) that gets to know you over time. Built as a **tool-using LLM agent** on **LangGraph** with a **three-layer memory architecture** — structured Postgres logs + **pgvector semantic recall (RAG)** + an LLM-condensed long-term profile — so the journal can grow indefinitely while the prompt stays bounded. Python/FastAPI backend, Claude/OpenAI, Whisper + ElevenLabs voice, token-by-token streaming, Firebase auth, deployed on **GCP Cloud Run + Cloud SQL**.
-🔗 [Live app](https://daily-coach-iwkg6nbera-de.a.run.app/) · [Overview](https://srichsun.github.io/performance-coach/)
+### [Dear Myself](https://github.com/srichsun/dearme) — AI Journal with Long-Term Memory
+An AI journal for energy, wins, and gratitude: write the day once, and it becomes a memory that answers questions about your own record months later — naming the days each answer draws on. Built on a **three-layer memory architecture** — structured Postgres journal + **pgvector semantic recall over atomic facts** + an LLM-condensed rolling profile — so the record grows indefinitely while every prompt stays bounded. The read path is **write-free by construction**: asking questions never mutates memory. Python/FastAPI, Claude/OpenAI, React (Vite) with a Recharts energy chart, Firebase auth, deployed on **GCP Cloud Run + Cloud SQL** behind a Firebase Hosting custom domain, CI/CD with Workload Identity Federation.
+🔗 [Live app](https://heydearmyself.com) · [Overview](https://srichsun.github.io/dearme/)
 
 ### [flashdrop](https://github.com/srichsun/flashdrop) — Influencer Flash-Sale E-Commerce (Rails)
 Creators run limited-time, limited-quantity drops; buyers get a countdown, live stock, and one-tap checkout. Underneath: **row-level multi-tenancy** (`acts_as_tenant`) with two independent tenant-resolution paths, **pessimistic-lock oversell protection** proven by multi-threaded race tests, an **AASM order state machine** with full rollback on payment failure, and **signature-verified Stripe & ECPay webhooks**. Full-text search via `pg_search` trigram, CI (RuboCop / RSpec / Brakeman / gitleaks), and observability with Scout APM + Sentry + Lograge.
@@ -59,7 +59,9 @@ A repeatable health audit for legacy Rails codebases. It orchestrates the canoni
 
 **AI / LLM** · Python · FastAPI · LangChain · LangGraph (agent orchestration) · RAG · pgvector (vector search) · Claude & OpenAI APIs · LangSmith · Pytest · uv · Claude Code
 
-**Backend** · Ruby on Rails 7/8 · RSpec (TDD) · Sidekiq · RESTful API · JWT · Hotwire · Devise · Pundit · ActionCable · acts_as_tenant · AASM
+**Backend** · Ruby on Rails 7/8 · RSpec (TDD) · Sidekiq · RESTful API · JWT · Devise · Pundit · ActionCable · acts_as_tenant · AASM
+
+**Frontend** · React (Vite) · Recharts · Hotwire (Turbo/Stimulus) · Tailwind CSS · JavaScript (ES6+)
 
 **Data** · PostgreSQL · pgvector · MySQL · Redis · Memcached · query tuning & index design · N+1 detection (Bullet) · row-level tenancy
 
